@@ -1,0 +1,1647 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1분꿀팁베트남 | 1mintipviet</title>
+  <meta name="description" content="베트남과 관련된 다양한 소식을 전해드리는 1분꿀팁베트남 공식 채널 페이지" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ══════════════════════════════════════
+       ROOT & RESET
+    ══════════════════════════════════════ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      /* 베트남 국기 컬러 기반 팔레트 */
+      --red:        #C0392B;
+      --red-deep:   #922B21;
+      --red-light:  #E74C3C;
+      --gold:       #D4A017;
+      --gold-lt:    #F5D76E;
+      --gold-pale:  #FDF6E3;
+      --cream:      #FAF3E0;
+      --ivory:      #F9F5EE;
+
+      /* 다크 배경 계열 */
+      --dark:       #1C1008;
+      --dark2:      #251508;
+      --dark3:      #2E1A0E;
+      --dark4:      #3D2314;
+
+      /* 텍스트 */
+      --text:       #F5ECD7;
+      --text-dim:   #B8A898;
+      --text-muted: #7A6A5A;
+
+      /* 기타 */
+      --border:     rgba(212,160,23,0.2);
+      --card-bg:    rgba(255,255,255,0.04);
+      --radius:     14px;
+      --shadow:     0 8px 40px rgba(0,0,0,0.5);
+      --shadow-sm:  0 4px 16px rgba(0,0,0,0.3);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: var(--dark);
+      color: var(--text);
+      line-height: 1.75;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    button { font-family: inherit; cursor: pointer; }
+
+    /* ══════════════════════════════════════
+       SCROLLBAR
+    ══════════════════════════════════════ */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--dark); }
+    ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+
+    /* ══════════════════════════════════════
+       DECORATIVE PATTERNS
+    ══════════════════════════════════════ */
+    .vn-pattern {
+      background-image:
+        repeating-linear-gradient(
+          45deg,
+          transparent,
+          transparent 10px,
+          rgba(212,160,23,0.03) 10px,
+          rgba(212,160,23,0.03) 20px
+        );
+    }
+
+    /* 연꽃/베트남 장식선 */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 0 auto 48px;
+      max-width: 300px;
+    }
+    .divider::before,
+    .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+    .divider-icon { color: var(--gold); font-size: 1rem; white-space: nowrap; }
+
+    /* ══════════════════════════════════════
+       NAVBAR
+    ══════════════════════════════════════ */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 999;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5%;
+      background: rgba(20, 10, 4, 0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      transition: background 0.3s;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 900;
+      font-size: 1.05rem;
+      letter-spacing: -0.3px;
+    }
+    .nav-logo-img {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      border: 2px solid var(--gold);
+      object-fit: cover;
+    }
+    .nav-logo-img-fallback {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      border: 2px solid var(--gold);
+      background: var(--red);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+    }
+    .nav-logo-text { color: var(--text); }
+    .nav-logo-text span { color: var(--gold); }
+
+    .nav-center {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+    }
+
+    /* 상단 플랫폼 링크 버튼 */
+    .nav-platform-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 14px;
+      border-radius: 6px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      border: 1px solid transparent;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    .nav-platform-btn:hover { transform: translateY(-2px); }
+
+    .npb-yt {
+      background: rgba(255,0,0,0.12);
+      border-color: rgba(255,0,0,0.25);
+      color: #ff6b6b;
+    }
+    .npb-yt:hover { background: rgba(255,0,0,0.22); border-color: rgba(255,0,0,0.5); }
+
+    .npb-blog {
+      background: rgba(3,199,90,0.1);
+      border-color: rgba(3,199,90,0.2);
+      color: #4ade80;
+    }
+    .npb-blog:hover { background: rgba(3,199,90,0.2); border-color: rgba(3,199,90,0.4); }
+
+    .npb-ntv {
+      background: rgba(3,199,90,0.08);
+      border-color: rgba(3,199,90,0.18);
+      color: #34d399;
+    }
+    .npb-ntv:hover { background: rgba(3,199,90,0.18); border-color: rgba(3,199,90,0.35); }
+
+    .npb-book {
+      background: rgba(212,160,23,0.12);
+      border-color: rgba(212,160,23,0.25);
+      color: var(--gold-lt);
+    }
+    .npb-book:hover { background: rgba(212,160,23,0.22); border-color: rgba(212,160,23,0.5); }
+
+    .nav-right { display: flex; align-items: center; gap: 10px; }
+
+    .nav-contact-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 18px;
+      background: linear-gradient(135deg, var(--red), var(--red-deep));
+      border: none;
+      border-radius: 6px;
+      color: #fff;
+      font-size: 0.78rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-decoration: none;
+    }
+    .nav-contact-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(192,57,43,0.4); }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+      background: none;
+      border: none;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px; height: 2px;
+      background: var(--text);
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+
+    /* Mobile menu */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 68px; left: 0; right: 0;
+      background: rgba(20,10,4,0.98);
+      backdrop-filter: blur(16px);
+      padding: 20px 5% 28px;
+      z-index: 998;
+      flex-direction: column;
+      gap: 4px;
+      border-bottom: 1px solid var(--border);
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu-section { font-size: 0.68rem; color: var(--text-muted); letter-spacing: 2px; text-transform: uppercase; padding: 12px 0 4px; }
+    .mobile-menu a {
+      display: flex; align-items: center; gap: 10px;
+      padding: 11px 14px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-dim);
+      transition: all 0.2s;
+    }
+    .mobile-menu a:hover { background: rgba(212,160,23,0.08); color: var(--gold-lt); }
+
+    /* ══════════════════════════════════════
+       HERO
+    ══════════════════════════════════════ */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 100px 5% 80px;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(160deg, #1C1008 0%, #2E1508 40%, #1A0C06 100%);
+    }
+
+    /* 베트남 느낌 배경 이미지 오버레이 */
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 15% 60%, rgba(192,57,43,0.25) 0%, transparent 55%),
+        radial-gradient(ellipse at 85% 25%, rgba(212,160,23,0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 100%, rgba(192,57,43,0.1) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    /* 장식 원형들 */
+    .hero-circle {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .hc-1 {
+      width: 700px; height: 700px;
+      border: 1px solid rgba(212,160,23,0.06);
+      top: -200px; right: -250px;
+    }
+    .hc-2 {
+      width: 500px; height: 500px;
+      border: 1px solid rgba(192,57,43,0.08);
+      bottom: -200px; left: -150px;
+    }
+    .hc-3 {
+      width: 300px; height: 300px;
+      border: 1px solid rgba(212,160,23,0.1);
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    /* 별(★) 장식 파티클 */
+    .star-particle {
+      position: absolute;
+      color: var(--gold);
+      font-size: 0.6rem;
+      opacity: 0.3;
+      pointer-events: none;
+      animation: twinkle 3s ease-in-out infinite;
+    }
+    @keyframes twinkle {
+      0%,100% { opacity: 0.2; transform: scale(1); }
+      50% { opacity: 0.6; transform: scale(1.3); }
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 860px;
+    }
+
+    /* 채널 아바타 */
+    .avatar-wrap {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 32px;
+    }
+    .avatar-ring {
+      width: 148px; height: 148px;
+      border-radius: 50%;
+      padding: 4px;
+      background: linear-gradient(135deg, var(--gold), var(--red), var(--gold));
+      box-shadow: 0 0 0 6px rgba(212,160,23,0.12), var(--shadow);
+    }
+    .avatar-ring img,
+    .avatar-ring .avatar-fallback {
+      width: 100%; height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      background: var(--dark3);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 3rem;
+    }
+    .avatar-verified {
+      position: absolute;
+      bottom: 4px; right: 4px;
+      width: 32px; height: 32px;
+      background: var(--red);
+      border: 3px solid var(--dark);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.85rem;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(212,160,23,0.1);
+      border: 1px solid rgba(212,160,23,0.3);
+      color: var(--gold-lt);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 6px 18px;
+      border-radius: 30px;
+      margin-bottom: 22px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', 'Noto Sans KR', serif;
+      font-size: clamp(2.2rem, 5.5vw, 4rem);
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 8px;
+      letter-spacing: -1px;
+    }
+    .hero h1 .h1-ko { display: block; }
+    .hero h1 .h1-en {
+      display: block;
+      font-size: 0.38em;
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      color: var(--text-dim);
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-top: 6px;
+    }
+    .gold-text {
+      background: linear-gradient(90deg, var(--gold-lt), var(--gold), #a07010);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-desc {
+      font-size: clamp(0.95rem, 2vw, 1.1rem);
+      color: var(--text-dim);
+      max-width: 540px;
+      margin: 20px auto 40px;
+      line-height: 1.8;
+    }
+
+    /* Hero CTA 버튼 */
+    .hero-btns {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 56px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: all 0.25s;
+      letter-spacing: 0.2px;
+      text-decoration: none;
+    }
+    .btn:hover { transform: translateY(-3px); }
+
+    .btn-vn {
+      background: linear-gradient(135deg, var(--red), var(--red-deep));
+      color: #fff;
+      box-shadow: 0 6px 24px rgba(192,57,43,0.45);
+    }
+    .btn-vn:hover { box-shadow: 0 10px 30px rgba(192,57,43,0.6); }
+
+    .btn-outline {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text-dim);
+    }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold-lt); background: rgba(212,160,23,0.06); }
+
+    .btn-gold-fill {
+      background: linear-gradient(135deg, var(--gold), #a07010);
+      color: #1C1008;
+      font-weight: 800;
+      box-shadow: 0 6px 24px rgba(212,160,23,0.35);
+    }
+    .btn-gold-fill:hover { box-shadow: 0 10px 30px rgba(212,160,23,0.5); }
+
+    /* Hero 플랫폼 아이콘 행 */
+    .hero-platforms {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+    .hp-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+      transition: transform 0.2s;
+    }
+    .hp-item:hover { transform: translateY(-4px); }
+    .hp-icon {
+      width: 52px; height: 52px;
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem;
+      border: 1px solid rgba(255,255,255,0.08);
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .hp-item:hover .hp-icon { border-color: var(--gold); box-shadow: 0 4px 16px rgba(212,160,23,0.2); }
+    .hp-label { font-size: 0.68rem; color: var(--text-muted); font-weight: 500; letter-spacing: 0.5px; }
+    .hp-yt   { background: rgba(255,0,0,0.12); }
+    .hp-blog { background: rgba(3,199,90,0.1); }
+    .hp-ntv  { background: rgba(0,180,220,0.1); }
+    .hp-book { background: rgba(212,160,23,0.1); }
+
+    /* ══════════════════════════════════════
+       SECTION COMMON
+    ══════════════════════════════════════ */
+    section { padding: 90px 5%; }
+
+    .section-wrap { max-width: 1120px; margin: 0 auto; }
+
+    .section-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--gold);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .section-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 20px; height: 1px;
+      background: var(--gold);
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', 'Noto Sans KR', serif;
+      font-size: clamp(1.6rem, 3.5vw, 2.5rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .section-desc {
+      color: var(--text-dim);
+      font-size: 0.93rem;
+      line-height: 1.8;
+      max-width: 580px;
+    }
+
+    /* ══════════════════════════════════════
+       ABOUT
+    ══════════════════════════════════════ */
+    #about {
+      background: linear-gradient(180deg, var(--dark) 0%, var(--dark2) 100%);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    /* 이미지 콜라주 */
+    .about-media {
+      position: relative;
+    }
+    .media-main {
+      width: 100%;
+      aspect-ratio: 4/3;
+      border-radius: var(--radius);
+      object-fit: cover;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+    .media-main-placeholder {
+      width: 100%;
+      aspect-ratio: 4/3;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background: linear-gradient(135deg, var(--dark3), var(--dark4));
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 10px;
+    }
+
+    /* 오버레이 채널 카드 */
+    .media-card {
+      position: absolute;
+      bottom: -20px; right: -20px;
+      background: rgba(20,10,4,0.95);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 20px;
+      display: flex; gap: 12px; align-items: center;
+      box-shadow: var(--shadow-sm);
+    }
+    .media-card-icon { font-size: 2rem; }
+    .media-card-num { font-weight: 900; font-size: 1.1rem; color: var(--gold-lt); }
+    .media-card-lbl { font-size: 0.68rem; color: var(--text-muted); }
+
+    /* 왼쪽 작은 카드 */
+    .media-badge {
+      position: absolute;
+      top: -16px; left: -16px;
+      background: linear-gradient(135deg, var(--red), var(--red-deep));
+      border-radius: 10px;
+      padding: 12px 18px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      box-shadow: var(--shadow-sm);
+      display: flex; gap: 6px; align-items: center;
+    }
+
+    /* About 텍스트 */
+    .about-tags {
+      display: flex; flex-wrap: wrap; gap: 8px;
+      margin-bottom: 24px;
+    }
+    .tag {
+      background: rgba(212,160,23,0.08);
+      border: 1px solid rgba(212,160,23,0.2);
+      color: var(--gold-lt);
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 5px 14px;
+      border-radius: 30px;
+      letter-spacing: 0.5px;
+    }
+
+    .about-body p {
+      color: var(--text-dim);
+      font-size: 0.93rem;
+      margin-bottom: 14px;
+    }
+    .about-body p strong { color: var(--text); font-weight: 600; }
+
+    .about-stats {
+      display: flex; gap: 0;
+      margin-top: 28px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .astat {
+      flex: 1;
+      padding: 18px 20px;
+      text-align: center;
+      border-right: 1px solid var(--border);
+    }
+    .astat:last-child { border-right: none; }
+    .astat-num { font-weight: 900; font-size: 1.3rem; color: var(--gold-lt); display: block; }
+    .astat-lbl { font-size: 0.68rem; color: var(--text-muted); margin-top: 2px; }
+
+    /* ══════════════════════════════════════
+       CONTENT CATEGORIES
+    ══════════════════════════════════════ */
+    #content {
+      background: var(--dark2);
+    }
+
+    .content-header { margin-bottom: 52px; }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .c-card {
+      background: var(--card-bg);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .c-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .c-card:hover {
+      border-color: rgba(212,160,23,0.2);
+      transform: translateY(-6px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+    }
+    .c-card:hover::before { opacity: 1; }
+
+    .c-card-icon {
+      width: 50px; height: 50px;
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 18px;
+    }
+    .ci-red    { background: rgba(192,57,43,0.15); }
+    .ci-gold   { background: rgba(212,160,23,0.12); }
+    .ci-green  { background: rgba(76,175,80,0.12); }
+    .ci-teal   { background: rgba(0,188,212,0.12); }
+    .ci-purple { background: rgba(156,39,176,0.12); }
+    .ci-blue   { background: rgba(33,150,243,0.12); }
+
+    .c-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 10px; color: var(--text); }
+    .c-card p  { font-size: 0.83rem; color: var(--text-dim); line-height: 1.7; }
+
+    /* ══════════════════════════════════════
+       BOOK SECTION
+    ══════════════════════════════════════ */
+    #book {
+      background: linear-gradient(160deg, var(--dark3) 0%, var(--dark2) 60%, var(--dark) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    #book::before {
+      content: '★';
+      position: absolute;
+      font-size: 40vw;
+      color: rgba(192,57,43,0.03);
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      font-weight: 900;
+    }
+
+    .book-main {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 56px;
+      align-items: start;
+      position: relative;
+    }
+
+    /* 책 표지 */
+    .book-cover-wrap {
+      position: relative;
+      flex-shrink: 0;
+    }
+    .book-cover {
+      width: 200px;
+      border-radius: 10px 14px 14px 4px;
+      box-shadow: -8px 12px 40px rgba(0,0,0,0.6), 6px 4px 12px rgba(0,0,0,0.3);
+      border: 1px solid rgba(255,255,255,0.08);
+      transition: transform 0.35s;
+    }
+    .book-cover:hover { transform: perspective(600px) rotateY(-8deg) scale(1.04); }
+
+    .book-cover-ph {
+      width: 200px; height: 284px;
+      border-radius: 10px 14px 14px 4px;
+      background: linear-gradient(160deg, var(--red-deep), #4a0a0a);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 12px;
+      box-shadow: -8px 12px 40px rgba(0,0,0,0.6);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 20px; text-align: center;
+    }
+    .book-cover-ph .bph-star { font-size: 2rem; color: var(--gold); }
+    .book-cover-ph .bph-t1 { font-size: 0.85rem; font-weight: 900; line-height: 1.4; }
+    .book-cover-ph .bph-t2 { font-size: 0.7rem; color: rgba(255,255,255,0.6); }
+
+    .book-badge-new {
+      position: absolute;
+      top: -10px; left: -10px;
+      background: linear-gradient(135deg, var(--gold), #a07010);
+      color: #1C1008;
+      font-size: 0.65rem; font-weight: 800;
+      padding: 5px 12px;
+      border-radius: 20px;
+      letter-spacing: 1px;
+      box-shadow: 0 4px 12px rgba(212,160,23,0.4);
+    }
+
+    /* 책 정보 */
+    .book-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(192,57,43,0.12);
+      border: 1px solid rgba(192,57,43,0.25);
+      color: #f87171;
+      font-size: 0.72rem; font-weight: 700;
+      padding: 5px 14px; border-radius: 20px;
+      margin-bottom: 16px;
+    }
+    .book-title {
+      font-family: 'Playfair Display', 'Noto Sans KR', serif;
+      font-size: clamp(1.1rem, 2.5vw, 1.65rem);
+      font-weight: 700;
+      line-height: 1.35;
+      margin-bottom: 8px;
+    }
+    .book-author { font-size: 0.85rem; color: var(--gold); font-weight: 500; margin-bottom: 16px; }
+    .book-desc { font-size: 0.88rem; color: var(--text-dim); line-height: 1.8; margin-bottom: 24px; }
+    .book-meta-row {
+      display: flex; gap: 24px; flex-wrap: wrap;
+      margin-bottom: 28px;
+      padding: 18px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .bm-item .bm-l { font-size: 0.68rem; color: var(--text-muted); margin-bottom: 2px; }
+    .bm-item .bm-v { font-size: 0.88rem; font-weight: 700; }
+
+    /* 구매처 버튼들 */
+    .book-stores { margin-top: 4px; }
+    .book-stores-label {
+      font-size: 0.72rem; color: var(--text-muted);
+      letter-spacing: 1.5px; text-transform: uppercase;
+      margin-bottom: 12px; font-weight: 600;
+    }
+    .store-btns { display: flex; gap: 10px; flex-wrap: wrap; }
+
+    .store-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 20px;
+      border-radius: 8px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      border: 1px solid;
+      transition: all 0.2s;
+      text-decoration: none;
+    }
+    .store-btn:hover { transform: translateY(-2px); }
+
+    .sb-kyobo {
+      background: rgba(0,100,200,0.1);
+      border-color: rgba(0,100,200,0.25);
+      color: #60a5fa;
+    }
+    .sb-kyobo:hover { background: rgba(0,100,200,0.2); box-shadow: 0 6px 20px rgba(0,100,200,0.2); }
+
+    .sb-yes24 {
+      background: rgba(255,100,0,0.1);
+      border-color: rgba(255,100,0,0.25);
+      color: #fb923c;
+    }
+    .sb-yes24:hover { background: rgba(255,100,0,0.2); box-shadow: 0 6px 20px rgba(255,100,0,0.2); }
+
+    .sb-aladin {
+      background: rgba(150,50,200,0.1);
+      border-color: rgba(150,50,200,0.25);
+      color: #c084fc;
+    }
+    .sb-aladin:hover { background: rgba(150,50,200,0.2); box-shadow: 0 6px 20px rgba(150,50,200,0.2); }
+
+    /* ══════════════════════════════════════
+       LINKS / CHANNELS
+    ══════════════════════════════════════ */
+    #links {
+      background: var(--dark2) url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23D4A017' fill-opacity='0.025'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .links-header { text-align: center; margin-bottom: 52px; }
+    .links-header .section-desc { margin: 0 auto; }
+
+    .links-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .lk-card {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 24px 28px;
+      background: var(--card-bg);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: var(--radius);
+      text-decoration: none;
+      color: var(--text);
+      transition: all 0.28s;
+      position: relative;
+      overflow: hidden;
+    }
+    .lk-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: var(--radius);
+      opacity: 0;
+      transition: opacity 0.28s;
+    }
+    .lk-card:hover { transform: translateY(-5px); }
+
+    .lk-yt::after  { background: radial-gradient(circle at 0 0, rgba(255,0,0,0.08), transparent 70%); }
+    .lk-blog::after{ background: radial-gradient(circle at 0 0, rgba(3,199,90,0.07), transparent 70%); }
+    .lk-ntv::after { background: radial-gradient(circle at 0 0, rgba(0,200,220,0.07), transparent 70%); }
+    .lk-email::after{background: radial-gradient(circle at 0 0, rgba(212,160,23,0.08), transparent 70%); }
+
+    .lk-yt:hover   { border-color: rgba(255,0,0,0.3); box-shadow: 0 12px 40px rgba(255,0,0,0.12); }
+    .lk-blog:hover { border-color: rgba(3,199,90,0.3); box-shadow: 0 12px 40px rgba(3,199,90,0.1); }
+    .lk-ntv:hover  { border-color: rgba(0,200,220,0.3); box-shadow: 0 12px 40px rgba(0,200,220,0.1); }
+    .lk-email:hover{ border-color: rgba(212,160,23,0.35); box-shadow: 0 12px 40px rgba(212,160,23,0.12); }
+    .lk-card:hover::after { opacity: 1; }
+
+    .lk-icon-wrap {
+      width: 56px; height: 56px;
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.6rem;
+      flex-shrink: 0;
+      position: relative; z-index: 1;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    .lki-yt    { background: rgba(255,0,0,0.12); }
+    .lki-blog  { background: rgba(3,199,90,0.1); }
+    .lki-ntv   { background: rgba(0,200,220,0.1); }
+    .lki-email { background: rgba(212,160,23,0.1); }
+
+    .lk-text { flex: 1; position: relative; z-index: 1; }
+    .lk-text .lt { font-size: 0.68rem; color: var(--text-muted); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 3px; }
+    .lk-text .lb { font-size: 1rem; font-weight: 700; }
+    .lk-text .ls { font-size: 0.75rem; color: var(--text-dim); margin-top: 2px; }
+
+    .lk-arrow {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      transition: all 0.2s;
+      position: relative; z-index: 1;
+    }
+    .lk-card:hover .lk-arrow { transform: translateX(5px); color: var(--gold); }
+
+    /* ══════════════════════════════════════
+       CONTACT
+    ══════════════════════════════════════ */
+    #contact {
+      background: linear-gradient(160deg, var(--dark2) 0%, var(--dark) 100%);
+      text-align: center;
+    }
+    .contact-wrap { max-width: 640px; margin: 0 auto; }
+
+    .contact-wrap .section-eyebrow { justify-content: center; margin-bottom: 12px; }
+    .contact-wrap .section-title   { text-align: center; margin-bottom: 14px; }
+    .contact-wrap .section-desc    { text-align: center; margin: 0 auto 36px; }
+
+    .contact-email-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(212,160,23,0.08);
+      border: 1px solid rgba(212,160,23,0.3);
+      color: var(--gold-lt);
+      font-size: 1rem;
+      font-weight: 700;
+      padding: 16px 32px;
+      border-radius: 50px;
+      margin-bottom: 40px;
+      transition: all 0.25s;
+      text-decoration: none;
+    }
+    .contact-email-btn:hover {
+      background: rgba(212,160,23,0.15);
+      transform: scale(1.03);
+      box-shadow: 0 8px 28px rgba(212,160,23,0.15);
+    }
+
+    .contact-btns { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+
+    /* ══════════════════════════════════════
+       FOOTER
+    ══════════════════════════════════════ */
+    footer {
+      background: #100800;
+      border-top: 1px solid var(--border);
+      padding: 48px 5% 32px;
+    }
+    .footer-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 48px;
+      align-items: start;
+    }
+    .footer-left {}
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .footer-logo span { color: var(--gold); }
+    .footer-tagline { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 20px; }
+    .footer-social { display: flex; gap: 10px; }
+    .fs-btn {
+      width: 38px; height: 38px;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.08);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+      transition: all 0.2s;
+      text-decoration: none;
+    }
+    .fs-btn:hover { border-color: var(--gold); background: rgba(212,160,23,0.08); transform: translateY(-2px); }
+
+    .footer-links-col h4 { font-size: 0.72rem; color: var(--text-muted); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 14px; }
+    .footer-links-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-links-col a { font-size: 0.82rem; color: var(--text-dim); transition: color 0.2s; }
+    .footer-links-col a:hover { color: var(--gold-lt); }
+
+    .footer-bottom {
+      max-width: 1120px;
+      margin: 32px auto 0;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .footer-copy { font-size: 0.72rem; color: var(--text-muted); }
+    .footer-flag { font-size: 1rem; }
+
+    /* ══════════════════════════════════════
+       SCROLL TO TOP
+    ══════════════════════════════════════ */
+    #scrollTop {
+      position: fixed;
+      bottom: 30px; right: 30px;
+      width: 46px; height: 46px;
+      background: linear-gradient(135deg, var(--red), var(--red-deep));
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; color: #fff;
+      cursor: pointer;
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.3s, transform 0.3s;
+      box-shadow: 0 4px 18px rgba(192,57,43,0.45);
+      z-index: 500;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    #scrollTop.show { opacity: 1; pointer-events: auto; }
+    #scrollTop:hover { transform: translateY(-4px); }
+
+    /* ══════════════════════════════════════
+       ANIMATIONS
+    ══════════════════════════════════════ */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    .fade-left {
+      opacity: 0;
+      transform: translateX(-28px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-left.visible { opacity: 1; transform: translateX(0); }
+
+    .fade-right {
+      opacity: 0;
+      transform: translateX(28px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-right.visible { opacity: 1; transform: translateX(0); }
+
+    /* ══════════════════════════════════════
+       RESPONSIVE
+    ══════════════════════════════════════ */
+    @media (max-width: 1024px) {
+      .about-grid { grid-template-columns: 1fr; gap: 48px; }
+      .about-media { max-width: 540px; margin: 0 auto; }
+      .media-card { right: 0; }
+      .content-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 768px) {
+      .nav-center  { display: none; }
+      .hamburger   { display: flex; }
+      section { padding: 70px 5%; }
+
+      .content-grid { grid-template-columns: 1fr; }
+      .links-grid   { grid-template-columns: 1fr; }
+
+      .book-main {
+        grid-template-columns: 1fr;
+        gap: 36px;
+        text-align: center;
+      }
+      .book-cover-wrap { margin: 0 auto; }
+      .book-meta-row { justify-content: center; }
+      .store-btns { justify-content: center; }
+      .book-stores-label { text-align: center; }
+
+      .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+      .footer-bottom { justify-content: center; text-align: center; }
+    }
+
+    @media (max-width: 480px) {
+      .hero-btns .btn { padding: 12px 20px; font-size: 0.83rem; }
+      .hero-platforms { gap: 16px; }
+      .hp-icon { width: 44px; height: 44px; font-size: 1.2rem; }
+      .about-stats { flex-direction: column; }
+      .astat { border-right: none; border-bottom: 1px solid var(--border); }
+      .astat:last-child { border-bottom: none; }
+      .nav-contact-btn span { display: none; }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ══════════════════════════════════
+     NAVBAR
+══════════════════════════════════ -->
+<nav id="mainNav">
+  <!-- 로고 -->
+  <a href="#home" class="nav-logo">
+    <img
+      class="nav-logo-img"
+      src="https://yt3.googleusercontent.com/ytc/AIdro_lWJAkr4f3GqHm3e3xU-hnzI0_Sv48JijbGQGTl7mRhlQ=s176-c-k-c0x00ffffff-no-rj"
+      alt="1분꿀팁베트남"
+      onerror="this.style.display='none';document.getElementById('nlFallback').style.display='flex';"
+    />
+    <div class="nav-logo-img-fallback" id="nlFallback" style="display:none;">🇻🇳</div>
+    <div class="nav-logo-text">1분꿀팁<span>베트남</span></div>
+  </a>
+
+  <!-- 중앙 플랫폼 링크들 (바로 연결) -->
+  <div class="nav-center">
+    <a href="https://www.youtube.com/@1mintipviet" target="_blank" class="nav-platform-btn npb-yt">
+      ▶ 유튜브
+    </a>
+    <a href="https://blog.naver.com/tvdkorea" target="_blank" class="nav-platform-btn npb-blog">
+      📝 블로그
+    </a>
+    <a href="https://tv.naver.com/1mintipvn" target="_blank" class="nav-platform-btn npb-ntv">
+      📺 네이버TV
+    </a>
+    <a href="#book" class="nav-platform-btn npb-book">
+      📚 출판도서
+    </a>
+  </div>
+
+  <!-- 우측 -->
+  <div class="nav-right">
+    <a href="mailto:1mintipvn@gmail.com" class="nav-contact-btn">
+      ✉️ <span>비즈니스 문의</span>
+    </a>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="메뉴">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-section">플랫폼 바로가기</div>
+  <a href="https://www.youtube.com/@1mintipviet" target="_blank" onclick="closeMenu()">▶️ 유튜브 채널</a>
+  <a href="https://blog.naver.com/tvdkorea" target="_blank" onclick="closeMenu()">📝 네이버 블로그</a>
+  <a href="https://tv.naver.com/1mintipvn" target="_blank" onclick="closeMenu()">📺 네이버 TV</a>
+  <div class="mobile-menu-section">페이지</div>
+  <a href="#about"   onclick="closeMenu()">🎯 채널 소개</a>
+  <a href="#content" onclick="closeMenu()">🎬 콘텐츠</a>
+  <a href="#book"    onclick="closeMenu()">📚 출판 도서</a>
+  <a href="#contact" onclick="closeMenu()">✉️ 비즈니스 문의</a>
+</div>
+
+
+<!-- ══════════════════════════════════
+     HERO
+══════════════════════════════════ -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-circle hc-1"></div>
+  <div class="hero-circle hc-2"></div>
+  <div class="hero-circle hc-3"></div>
+
+  <!-- 별 파티클 -->
+  <span class="star-particle" style="top:12%;left:8%;animation-delay:0s;">★</span>
+  <span class="star-particle" style="top:20%;right:10%;animation-delay:1s;">★</span>
+  <span class="star-particle" style="top:70%;left:5%;animation-delay:2s;">★</span>
+  <span class="star-particle" style="top:60%;right:6%;animation-delay:0.5s;">★</span>
+  <span class="star-particle" style="top:85%;left:20%;animation-delay:1.5s;">✦</span>
+  <span class="star-particle" style="top:30%;right:22%;animation-delay:2.5s;">✦</span>
+
+  <div class="hero-inner">
+    <!-- 아바타 -->
+    <div class="avatar-wrap">
+      <div class="avatar-ring">
+        <img
+          src="https://yt3.googleusercontent.com/ytc/AIdro_lWJAkr4f3GqHm3e3xU-hnzI0_Sv48JijbGQGTl7mRhlQ=s176-c-k-c0x00ffffff-no-rj"
+          alt="1분꿀팁베트남"
+          onerror="this.style.display='none';document.getElementById('avFallback').style.display='flex';"
+        />
+        <div class="avatar-fallback" id="avFallback" style="display:none;">🇻🇳</div>
+      </div>
+      <div class="avatar-verified">🇻🇳</div>
+    </div>
+
+    <div class="hero-eyebrow">🇻🇳 베트남 전문 정보 채널</div>
+
+    <h1>
+      <span class="h1-ko"><span class="gold-text">1분꿀팁</span>베트남</span>
+      <span class="h1-en">1 Min Tip Vietnam</span>
+    </h1>
+
+    <p class="hero-desc">
+      베트남 경제·연애·문화·생활 정보를<br />
+      <strong>호찌민 현지 생활자의 날카로운 시선</strong>으로 전해드립니다
+    </p>
+
+    <div class="hero-btns">
+      <a href="https://www.youtube.com/@1mintipviet" target="_blank" class="btn btn-vn">
+        ▶ 유튜브 구독하기
+      </a>
+      <a href="#book" class="btn btn-gold-fill">
+        📚 도서 보기
+      </a>
+      <a href="#about" class="btn btn-outline">
+        채널 소개 ↓
+      </a>
+    </div>
+
+    <!-- 플랫폼 아이콘 -->
+    <div class="hero-platforms">
+      <a href="https://www.youtube.com/@1mintipviet" target="_blank" class="hp-item">
+        <div class="hp-icon hp-yt">▶️</div>
+        <span class="hp-label">YouTube</span>
+      </a>
+      <a href="https://blog.naver.com/tvdkorea" target="_blank" class="hp-item">
+        <div class="hp-icon hp-blog">📝</div>
+        <span class="hp-label">Blog</span>
+      </a>
+      <a href="https://tv.naver.com/1mintipvn" target="_blank" class="hp-item">
+        <div class="hp-icon hp-ntv">📺</div>
+        <span class="hp-label">Naver TV</span>
+      </a>
+      <a href="#book" class="hp-item">
+        <div class="hp-icon hp-book">📚</div>
+        <span class="hp-label">출판도서</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════
+     ABOUT
+══════════════════════════════════ -->
+<section id="about">
+  <div class="section-wrap">
+    <div class="about-grid">
+
+      <!-- 미디어 영역 -->
+      <div class="about-media fade-left">
+        <img
+          class="media-main"
+          src="https://yt3.googleusercontent.com/ytc/AIdro_lWJAkr4f3GqHm3e3xU-hnzI0_Sv48JijbGQGTl7mRhlQ=s900-c-k-c0x00ffffff-no-rj"
+          alt="1분꿀팁베트남 채널 이미지"
+          onerror="this.style.display='none';document.getElementById('mmFallback').style.display='flex';"
+        />
+        <div class="media-main-placeholder" id="mmFallback" style="display:none;">
+          <span style="font-size:3rem;">🇻🇳</span>
+          <p style="color:var(--text-dim);font-size:0.85rem;">1분꿀팁베트남</p>
+        </div>
+
+        <div class="media-badge">🎬 유튜브 채널 운영 중</div>
+
+        <div class="media-card">
+          <span class="media-card-icon">🇻🇳</span>
+          <div>
+            <div class="media-card-num">Ho Chi Minh</div>
+            <div class="media-card-lbl">현지 생활자 제작 콘텐츠</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 텍스트 영역 -->
+      <div class="about-content fade-right">
+        <div class="about-tags">
+          <span class="tag">🇻🇳 베트남</span>
+          <span class="tag">💰 경제</span>
+          <span class="tag">❤️ 연애·결혼</span>
+          <span class="tag">🏙️ 호찌민 생활</span>
+          <span class="tag">✈️ 이민·정착</span>
+        </div>
+
+        <div class="section-eyebrow">About Channel</div>
+        <h2 class="section-title">
+          베트남에 관한 모든 것,<br /><span class="gold-text">1분으로 압축</span>해드립니다
+        </h2>
+
+        <div class="about-body">
+          <p>
+            안녕하세요! <strong>「1분꿀팁베트남」</strong>은 베트남과 관련된 다양한 소식과
+            현지 생활 정보를 전해드리는 채널입니다. 호찌민을 중심으로
+            베트남 현지 생활을 직접 경험하며 경제·연애·문화 정보를
+            솔직하고 날카롭게 전달합니다.
+          </p>
+          <p>
+            캐나다·대만·베트남을 거쳐온 두 저자(일꿀베·리처드킴)가
+            <strong>직접 겪은 경험</strong>을 바탕으로 영상·도서·블로그로 공유합니다.
+            베트남 진출, 현지 생활, 제2의 인생을 준비하는 분들께 최고의 길잡이가 되겠습니다.
+          </p>
+        </div>
+
+        <div class="about-stats">
+          <div class="astat">
+            <span class="astat-num">📺</span>
+            <div class="astat-lbl">유튜브 채널</div>
+          </div>
+          <div class="astat">
+            <span class="astat-num">📝</span>
+            <div class="astat-lbl">네이버 블로그</div>
+          </div>
+          <div class="astat">
+            <span class="astat-num">📚</span>
+            <div class="astat-lbl">출판 도서</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════
+     CONTENT CATEGORIES
+══════════════════════════════════ -->
+<section id="content">
+  <div class="section-wrap">
+    <div class="content-header fade-up">
+      <div class="section-eyebrow">Contents</div>
+      <h2 class="section-title">어떤 콘텐츠를 다루나요?</h2>
+      <p class="section-desc">
+        베트남 현지에서 직접 경험하고 취재한 생생한 정보를 다양한 주제로 전달합니다.
+      </p>
+    </div>
+
+    <div class="divider fade-up"><span class="divider-icon">✦ 콘텐츠 카테고리 ✦</span></div>
+
+    <div class="content-grid">
+      <div class="c-card fade-up">
+        <div class="c-card-icon ci-gold">💰</div>
+        <h3>경제 &amp; 투자</h3>
+        <p>베트남 경제 동향, 부동산 전망, IMF 리스크, 빈그룹 등 현지 기업 분석까지 투자자를 위한 핵심 정보.</p>
+      </div>
+      <div class="c-card fade-up">
+        <div class="c-card-icon ci-red">❤️</div>
+        <h3>연애 &amp; 결혼 문화</h3>
+        <p>베트남 여성의 연애 가치관, 결혼 문화, 이상형, 경제관 등 현실적인 팩트와 경험으로 솔직하게 분석.</p>
+      </div>
+      <div class="c-card fade-up">
+        <div class="c-card-icon ci-teal">🌏</div>
+        <h3>문화 &amp; 역사</h3>
+        <p>현지인도 모르는 베트남 역사, 금기사항, 태풍·기후 정보 등 깊이 있는 베트남 이야기.</p>
+      </div>
+      <div class="c-card fade-up">
+        <div class="c-card-icon ci-green">🏙️</div>
+        <h3>호찌민 생활정보</h3>
+        <p>오토바이, 지하철, 음식·과일, 물가 정보까지 호찌민 현지 생활에 꼭 필요한 실용적인 꿀팁.</p>
+      </div>
+      <div class="c-card fade-up">
+        <div class="c-card-icon ci-purple">✈️</div>
+        <h3>동남아 이민 &amp; 은퇴</h3>
+        <p>동남아 은퇴이민을 꿈꾸는 분들을 위한 현실적인 가이드. 미·중 무역전쟁 속 베트남의 기회 분석.</p>
+      </div>
+      <div class="c-card fade-up">
+        <div class="c-card-icon ci-blue">📰</div>
+        <h3>베트남 최신 뉴스</h3>
+        <p>산유국의 역설, 부정부패 문화, 경제 성장과 중진국 함정 등 미디어가 놓친 베트남의 현실.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════
+     BOOK
+══════════════════════════════════ -->
+<section id="book">
+  <div class="section-wrap">
+    <div class="fade-up" style="margin-bottom:52px;">
+      <div class="section-eyebrow">Publication</div>
+      <h2 class="section-title">출판 도서</h2>
+      <p class="section-desc">
+        베트남 현지 생활 경험을 담은 실전 가이드북.
+        교보문고, YES24, 알라딘에서 만나보세요.
+      </p>
+    </div>
+
+    <div class="divider fade-up"><span class="divider-icon">✦ 도서 안내 ✦</span></div>
+
+    <div class="book-main fade-up">
+      <!-- 책 표지 -->
+      <div class="book-cover-wrap">
+        <div class="book-badge-new">📖 NEW</div>
+        <img
+          class="book-cover"
+          src="https://contents.kyobobook.co.kr/sih/fit-in/458x0/pdt/9791141926335.jpg"
+          alt="베트남 여성과의 연애 결혼 그리고 문화적 차이"
+          onerror="this.style.display='none';document.getElementById('bcFallback').style.display='flex';"
+        />
+        <div class="book-cover-ph" id="bcFallback" style="display:none;">
+          <span class="bph-star">★</span>
+          <p class="bph-t1">베트남 여성과의<br/>연애, 결혼,<br/>그리고 문화적 차이</p>
+          <p class="bph-t2">일꿀베 · 리처드킴</p>
+        </div>
+      </div>
+
+      <!-- 도서 정보 -->
+      <div class="book-info">
+        <div class="book-eyebrow">📚 베트남 현지 경험 기반 가이드북</div>
+
+        <h3 class="book-title">
+          베트남 여성과의 연애, 결혼,<br />그리고 문화적 차이
+        </h3>
+
+        <p class="book-author">✍️ 저자 : 일꿀베 · 리처드킴 (1분꿀팁베트남)</p>
+
+        <p class="book-desc">
+          베트남 여성들의 연애 가치관부터 결혼 문화, 싱글맘 구별법, 이상형, 경제관까지
+          실질적인 팩트와 경험을 바탕으로 분석한 가이드북.
+          호찌민 생활자의 날카로운 시선으로 담은 이국적 로맨스의 모든 것.
+        </p>
+
+        <div class="book-meta-row">
+          <div class="bm-item">
+            <div class="bm-l">출판일</div>
+            <div class="bm-v">2025년 3월 20일</div>
+          </div>
+          <div class="bm-item">
+            <div class="bm-l">분량</div>
+            <div class="bm-v">300쪽</div>
+          </div>
+          <div class="bm-item">
+            <div class="bm-l">ISBN</div>
+            <div class="bm-v">9791141926335</div>
+          </div>
+          <div class="bm-item">
+            <div class="bm-l">분야</div>
+            <div class="bm-v">해외여행 / 문화</div>
+          </div>
+        </div>
+
+        <!-- 구매처 3곳 -->
+        <div class="book-stores">
+          <div class="book-stores-label">📦 구매처 선택</div>
+          <div class="store-btns">
+            <a href="https://product.kyobobook.co.kr/detail/S000216257234"
+               target="_blank" class="store-btn sb-kyobo">
+              📘 교보문고
+            </a>
+            <a href="https://www.yes24.com/product/goods/144258383"
+               target="_blank" class="store-btn sb-yes24">
+              🟠 YES24
+            </a>
+            <a href="https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=361312477"
+               target="_blank" class="store-btn sb-aladin">
+              🟣 알라딘
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════
+     LINKS / CHANNELS
+══════════════════════════════════ -->
+<section id="links">
+  <div class="section-wrap">
+    <div class="links-header fade-up">
+      <div class="section-eyebrow" style="justify-content:center;">Channels</div>
+      <h2 class="section-title" style="text-align:center;">모든 채널 한눈에</h2>
+      <p class="section-desc">
+        유튜브, 네이버 블로그, 네이버TV 등<br />
+        다양한 플랫폼에서 1분꿀팁베트남을 만나보세요.
+      </p>
+    </div>
+
+    <div class="divider fade-up"><span class="divider-icon">✦ 플랫폼 ✦</span></div>
+
+    <div class="links-grid">
+      <!-- YouTube -->
+      <a href="https://www.youtube.com/@1mintipviet" target="_blank" class="lk-card lk-yt fade-up">
+        <div class="lk-icon-wrap lki-yt">▶️</div>
+        <div class="lk-text">
+          <div class="lt">Video · YouTube</div>
+          <div class="lb">유튜브 채널</div>
+          <div class="ls">베트남 정보 영상 콘텐츠</div>
+        </div>
+        <span class="lk-arrow">→</span>
+      </a>
+
+      <!-- Blog -->
+      <a href="https://blog.naver.com/tvdkorea" target="_blank" class="lk-card lk-blog fade-up">
+        <div class="lk-icon-wrap lki-blog">📝</div>
+        <div class="lk-text">
+          <div class="lt">Article · Naver Blog</div>
+          <div class="lb">네이버 블로그</div>
+          <div class="ls">베트남 생활 정보 글</div>
+        </div>
+        <span class="lk-arrow">→</span>
+      </a>
+
+      <!-- Naver TV -->
+      <a href="https://tv.naver.com/1mintipvn" target="_blank" class="lk-card lk-ntv fade-up">
+        <div class="lk-icon-wrap lki-ntv">📺</div>
+        <div class="lk-text">
+          <div class="lt">Video · Naver TV</div>
+          <div class="lb">네이버 TV</div>
+          <div class="ls">네이버 플랫폼 영상</div>
+        </div>
+        <span class="lk-arrow">→</span>
+      </a>
+
+      <!-- Business Email -->
+      <a href="mailto:1mintipvn@gmail.com" class="lk-card lk-email fade-up">
+        <div class="lk-icon-wrap lki-email">✉️</div>
+        <div class="lk-text">
+          <div class="lt">Business · Email</div>
+          <div class="lb">비즈니스 문의</div>
+          <div class="ls">1mintipvn@gmail.com</div>
+        </div>
+        <span class="lk-arrow">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════
+     CONTACT
+══════════════════════════════════ -->
+<section id="contact">
+  <div class="contact-wrap fade-up">
+    <div class="section-eyebrow">Contact</div>
+    <h2 class="section-title">비즈니스 협의</h2>
+    <p class="section-desc">
+      광고 협찬, 콜라보레이션, 출연 제안 등<br />
+      비즈니스 관련 문의는 이메일로 연락 주세요.
+    </p>
+
+    <a href="mailto:1mintipvn@gmail.com" class="contact-email-btn">
+      ✉️ 1mintipvn@gmail.com
+    </a>
+
+    <div class="contact-btns">
+      <a href="https://www.youtube.com/@1mintipviet" target="_blank" class="btn btn-vn">▶ 유튜브 구독</a>
+      <a href="https://blog.naver.com/tvdkorea" target="_blank" class="btn btn-outline">📝 블로그</a>
+      <a href="https://tv.naver.com/1mintipvn" target="_blank" class="btn btn-outline">📺 네이버TV</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════
+     FOOTER
+══════════════════════════════════ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-left">
+      <div class="footer-logo">🇻🇳 1분꿀팁<span>베트남</span></div>
+      <p class="footer-tagline">베트남과 관련된 다양한 소식을 전해드립니다</p>
+      <div class="footer-social">
+        <a href="https://www.youtube.com/@1mintipviet" target="_blank" class="fs-btn" title="YouTube">▶️</a>
+        <a href="https://blog.naver.com/tvdkorea" target="_blank" class="fs-btn" title="Blog">📝</a>
+        <a href="https://tv.naver.com/1mintipvn" target="_blank" class="fs-btn" title="Naver TV">📺</a>
+        <a href="mailto:1mintipvn@gmail.com" class="fs-btn" title="Email">✉️</a>
+      </div>
+    </div>
+
+    <div class="footer-links-col">
+      <h4>바로가기</h4>
+      <ul>
+        <li><a href="https://www.youtube.com/@1mintipviet" target="_blank">YouTube 채널</a></li>
+        <li><a href="https://blog.naver.com/tvdkorea" target="_blank">네이버 블로그</a></li>
+        <li><a href="https://tv.naver.com/1mintipvn" target="_blank">네이버 TV</a></li>
+        <li><a href="https://product.kyobobook.co.kr/detail/S000216257234" target="_blank">교보문고 도서</a></li>
+        <li><a href="https://www.yes24.com/product/goods/144258383" target="_blank">YES24 도서</a></li>
+        <li><a href="https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=361312477" target="_blank">알라딘 도서</a></li>
+        <li><a href="mailto:1mintipvn@gmail.com">비즈니스 문의</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2025 1분꿀팁베트남 · 1mintipviet. All rights reserved.</p>
+    <span class="footer-flag">🇻🇳</span>
+  </div>
+</footer>
+
+<!-- Scroll to Top -->
+<div id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="맨 위로">▲</div>
+
+
+<!-- ══════════════════════════════════
+     SCRIPTS
+══════════════════════════════════ -->
+<script>
+  /* ── 햄버거 메뉴 ── */
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+  function closeMenu() {
+    document.getElementById('mobileMenu').classList.remove('open');
+  }
+  document.addEventListener('click', function(e) {
+    const m = document.getElementById('mobileMenu');
+    const h = document.querySelector('.hamburger');
+    if (!m.contains(e.target) && !h.contains(e.target)) m.classList.remove('open');
+  });
+
+  /* ── 스크롤 상단 버튼 ── */
+  window.addEventListener('scroll', function() {
+    document.getElementById('scrollTop').classList.toggle('show', window.scrollY > 450);
+  });
+
+  /* ── 스크롤 시 fade-up / fade-left / fade-right 애니메이션 ── */
+  const observer = new IntersectionObserver(
+    entries => entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    }),
+    { threshold: 0.12, rootMargin: '0px 0px -30px 0px' }
+  );
+  document.querySelectorAll('.fade-up, .fade-left, .fade-right')
+          .forEach((el, i) => {
+            // 그리드 카드는 순차적 딜레이
+            if (el.closest('.content-grid') || el.closest('.links-grid')) {
+              const siblings = [...el.parentNode.children].filter(c =>
+                c.classList.contains('fade-up') ||
+                c.classList.contains('fade-left') ||
+                c.classList.contains('fade-right')
+              );
+              el.style.transitionDelay = (siblings.indexOf(el) * 0.1) + 's';
+            }
+            observer.observe(el);
+          });
+
+  /* ── 네비게이션 스크롤 효과 ── */
+  window.addEventListener('scroll', function() {
+    const nav = document.getElementById('mainNav');
+    if (window.scrollY > 60) {
+      nav.style.background = 'rgba(10,5,2,0.97)';
+    } else {
+      nav.style.background = 'rgba(20,10,4,0.92)';
+    }
+  });
+
+  /* ── 별 파티클 위치 랜덤화 ── */
+  document.querySelectorAll('.star-particle').forEach(star => {
+    star.style.animationDelay = (Math.random() * 3) + 's';
+    star.style.animationDuration = (2.5 + Math.random() * 2) + 's';
+  });
+</script>
+
+</body>
+</html>
